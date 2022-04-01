@@ -25,8 +25,14 @@ Public Class CoronaApp
                 txtOutputDaily.Text = foundItem.DailyCases
                 txtOutputPerPop.Text = foundItem.PerPopulation
                 txtOutputLast.Text = foundItem.LastStatisticsDate
+                If foundItem.LastStatisticsDate = foundItem.StatisticsDate Then
+                    foundItem = objectList.Where(Function(__) __.StatisticsDate = txtData.Text).FirstOrDefault()
+                    Dim nextDay As Double
+                    nextDay = foundItem.TotalCases + foundItem.TotalCasesLast14D / 14
+                    txtOutputNext.Text = nextDay.ToString("0")
+                End If
             End If
-        End If
+            End If
         '------------------------------------------------------[ Maakond ]------------------------------------------------------
         If cbMaakond.SelectedItem IsNot "Eesti" Then
             request = DirectCast(WebRequest.Create("https://opendata.digilugu.ee/opendata_covid19_test_county_all.json"), HttpWebRequest)
