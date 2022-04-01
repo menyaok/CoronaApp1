@@ -19,6 +19,7 @@ Public Class CoronaApp
             Dim foundItem = objectList.Where(Function(__) __.StatisticsDate = txtData.Text).FirstOrDefault()
 
             If foundItem IsNot Nothing Then
+                lblMaakond.Text = "Eesti"
                 txtOutputTotal.Text = foundItem.TotalCases
                 txtOutputTotal14.Text = foundItem.TotalCasesLast14D
                 txtOutputDaily.Text = foundItem.DailyCases
@@ -37,16 +38,15 @@ Public Class CoronaApp
             Dim objectList = JsonConvert.DeserializeObject(Of List(Of Data))(jsonString)
             Dim foundItem = objectList.Where(Function(__) __.StatisticsDate = txtData.Text And __.County = cbMaakond.SelectedItem And __.ResultValue = "P").FirstOrDefault
 
+            If foundItem IsNot Nothing Then
+                lblMaakond.Text = foundItem.County
+                txtOutputTotal.Text = foundItem.TotalCases
+                txtOutputDaily.Text = foundItem.DailyCases
+                txtOutputPerPop.Text = "No Data For this County"
+                txtOutputTotal14.Text = "No Data For this County"
+                txtOutputLast.Text = foundItem.LastStatisticsDate
 
-            lblMaakond.Text = foundItem.County
-            txtOutputTotal.Text = foundItem.TotalCases
-            txtOutputDaily.Text = foundItem.DailyCases
-            txtOutputPerPop.Text = "No Data For this County"
-            txtOutputTotal14.Text = "No Data For this County"
-            txtOutputLast.Text = foundItem.LastStatisticsDate
-
-
-
+            End If
         End If
 
     End Sub
