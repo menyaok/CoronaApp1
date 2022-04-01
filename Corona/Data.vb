@@ -12,7 +12,6 @@
     Public Property ResultValue As String
 
 
-
 End Class
 '{"LastStatisticsDate":"2022-03-31",
 '"StatisticsDate":"2021-11-12",

@@ -37,6 +37,8 @@ Partial Class CoronaApp
         Me.Label2 = New System.Windows.Forms.Label()
         Me.cbMaakond = New System.Windows.Forms.ComboBox()
         Me.lblMaakond = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txtOutputNext = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btnData
@@ -174,11 +176,31 @@ Partial Class CoronaApp
         Me.lblMaakond.TabIndex = 15
         Me.lblMaakond.Text = "Maakond"
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(442, 161)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(86, 13)
+        Me.Label7.TabIndex = 16
+        Me.Label7.Text = "Next Day Cases:"
+        '
+        'txtOutputNext
+        '
+        Me.txtOutputNext.AutoSize = True
+        Me.txtOutputNext.Location = New System.Drawing.Point(534, 161)
+        Me.txtOutputNext.Name = "txtOutputNext"
+        Me.txtOutputNext.Size = New System.Drawing.Size(13, 13)
+        Me.txtOutputNext.TabIndex = 17
+        Me.txtOutputNext.Text = "0"
+        '
         'CoronaApp
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.txtOutputNext)
+        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.lblMaakond)
         Me.Controls.Add(Me.cbMaakond)
         Me.Controls.Add(Me.Label2)
@@ -216,4 +238,6 @@ Partial Class CoronaApp
     Friend WithEvents Label2 As Label
     Friend WithEvents cbMaakond As ComboBox
     Friend WithEvents lblMaakond As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents txtOutputNext As Label
 End Class
