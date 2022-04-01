@@ -7,7 +7,7 @@ Public Class CoronaApp
     Dim reader As StreamReader
 
     Private Sub btnData_Click1(sender As Object, e As EventArgs) Handles btnData.Click
-        'Eesti
+        '------------------------------------------------------[ Eesti ]------------------------------------------------------
         If cbMaakond.SelectedItem = "Eesti" Then
 
             request = DirectCast(WebRequest.Create("https://opendata.digilugu.ee/opendata_covid19_tests_total.json"), HttpWebRequest)
@@ -26,7 +26,7 @@ Public Class CoronaApp
                 txtOutputLast.Text = foundItem.LastStatisticsDate
             End If
         End If
-        'Maakonnad
+        '------------------------------------------------------[ Maakond ]------------------------------------------------------
         If cbMaakond.SelectedItem IsNot "Eesti" Then
             request = DirectCast(WebRequest.Create("https://opendata.digilugu.ee/opendata_covid19_test_county_all.json"), HttpWebRequest)
             response = DirectCast(request.GetResponse(), HttpWebResponse)
