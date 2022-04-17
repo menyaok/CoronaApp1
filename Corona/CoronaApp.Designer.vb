@@ -161,7 +161,7 @@ Partial Class CoronaApp
         '
         Me.cbMaakond.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbMaakond.FormattingEnabled = True
-        Me.cbMaakond.Items.AddRange(New Object() {"Eesti", "Harju maakond", "Hiiu maakond", "Ida-Viru maakond", "Järva maakond", "Jõgeva maakond", "Lääne maakond", "Lääne-Viru maakond", "Pärnu maakond", "Põlva maakond", "Rapla maakond", "Saare maakond", "Tartu maakond", "Valga maakond", "Viljandi maakond", "Võru maakond"})
+        Me.cbMaakond.Items.AddRange(New Object() {"Eesti", "Harju maakond", "Hiiu maakond", "Ida-Viru maakond", "Järva maakond", "Jõgeva maakond", "Lääne maakond", "Lääne-Viru maakond", "Pärnu maakond", "Põlva maakond", "Rapla maakond", "Saare maakond", "Tartu maakond", "Valga maakond", "Viljandi maakond", "Võru maakond", "Finland", "Latvia", "Lithuania", "Norway", "Poland", "Sweden", "Austria", "Belgium", "Croatia", "Cyprus", "Czechia", "Denmark", "France", "Germany", "Greece", "Hungary", "Ireland", "Italy", "Luxembourg", "Malta", "Netherlands", "Portugal", "Romania", "Slovakia", "Slovenia", "Spain"})
         Me.cbMaakond.Location = New System.Drawing.Point(145, 269)
         Me.cbMaakond.Name = "cbMaakond"
         Me.cbMaakond.Size = New System.Drawing.Size(121, 21)
@@ -179,7 +179,7 @@ Partial Class CoronaApp
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(442, 161)
+        Me.Label7.Location = New System.Drawing.Point(337, 297)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(86, 13)
         Me.Label7.TabIndex = 16
@@ -188,7 +188,7 @@ Partial Class CoronaApp
         'txtOutputNext
         '
         Me.txtOutputNext.AutoSize = True
-        Me.txtOutputNext.Location = New System.Drawing.Point(534, 161)
+        Me.txtOutputNext.Location = New System.Drawing.Point(429, 297)
         Me.txtOutputNext.Name = "txtOutputNext"
         Me.txtOutputNext.Size = New System.Drawing.Size(13, 13)
         Me.txtOutputNext.TabIndex = 17

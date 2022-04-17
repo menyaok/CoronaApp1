@@ -12,7 +12,26 @@
     Public Property ResultValue As String
 
 
+
 End Class
+
+
+Public Class JSON_result
+    Public Property location As String
+    Public Property continent As String
+    Public Property last_updated_date As String
+    Public Property total_cases As Double
+    Public Property new_cases As Double
+    Public Property total_cases_per_million As Double
+
+End Class
+
+'Latvia LVA
+'Lithuania LVO
+'Poland POL
+'Norway NOR
+
+
 '{"LastStatisticsDate":"2022-03-31",
 '"StatisticsDate":"2021-11-12",
 '"Country":"Eesti",
