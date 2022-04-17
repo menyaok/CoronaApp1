@@ -1,6 +1,8 @@
 ﻿Imports System.Net
 Imports System.IO
 Imports Newtonsoft.Json
+Imports Newtonsoft.Json.Linq
+
 Public Class CoronaApp
     Dim request As HttpWebRequest
     Dim response As HttpWebResponse = Nothing
@@ -53,6 +55,35 @@ Public Class CoronaApp
                 txtOutputLast.Text = foundItem.LastStatisticsDate
 
             End If
+        End If
+        If cbMaakond.SelectedItem IsNot "Eesti" Then
+
+
+            request = DirectCast(WebRequest.Create("https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/latest/owid-covid-latest.json"), HttpWebRequest)
+            response = DirectCast(request.GetResponse(), HttpWebResponse)
+            reader = New StreamReader(response.GetResponseStream())
+            Dim jsonString As String
+            jsonString = reader.ReadToEnd()
+
+            Dim WorldCountry() As String = {"Latvia", "Lithuania", "Poland", "Norway", "Finland", "Sweden", "Austria", "Belgium", "Bulgaria", "Croatia", "
+Cyprus", "Czechia", "Denmark", "France", "Germany", "Greece", "Hungary", "Ireland", "Italy", "Luxembourg", "Malta", "Netherlands", "Portugal", "Romania", "Slovakia", "Slovenia", "Spain"}
+            Dim WorldCountryAbbrev() As String = {"LVA", "LVO", "POL", "NOR", "FIN", "SWE", "AUT", "BEL", "BGR", "HRV", "CYP", "CZE", "DNK", "FRA", "DEU", "GRC", "HUN", "IRL", "ITA", "LUX", "MLT", "NLD", "PRT", "ROU", "SVK", "SVN", "ESP"}
+
+            For i As Integer = 0 To 26
+                If WorldCountry(i) = cbMaakond.SelectedItem Then
+                    Dim objectList = JObject.Parse(jsonString)
+                    Dim foundItem = JsonConvert.DeserializeObject(Of JSON_result)(objectList(WorldCountryAbbrev(i)).ToString)
+                    lblMaakond.Text = foundItem.location
+                    txtOutputTotal.Text = foundItem.total_cases
+                    txtOutputDaily.Text = foundItem.new_cases
+                    txtOutputPerPop.Text = foundItem.total_cases_per_million
+                    txtOutputTotal14.Text = "No Data For this County"
+                    txtOutputLast.Text = foundItem.last_updated_date
+                End If
+            Next
+
+
+
         End If
 
     End Sub
