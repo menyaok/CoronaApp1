@@ -68,7 +68,7 @@ Public Class CoronaApp
 
             Dim WorldCountry() As String = {"Latvia", "Lithuania", "Poland", "Norway", "Finland", "Sweden", "Austria", "Belgium", "Bulgaria", "Croatia", "
 Cyprus", "Czechia", "Denmark", "France", "Germany", "Greece", "Hungary", "Ireland", "Italy", "Luxembourg", "Malta", "Netherlands", "Portugal", "Romania", "Slovakia", "Slovenia", "Spain", "Russia", "Greenland", "Mexico", "United States", "Egypt", "Cyprus", "Turkey", "China", "Japan", "India", "Ukraine", "Brazil", "Chile", "United Arab Emirates", "United Kingdom"}
-            Dim WorldCountryAbbrev() As String = {"LVA", "LVO", "POL", "NOR", "FIN", "SWE", "AUT", "BEL", "BGR", "HRV", "CYP", "CZE", "DNK", "FRA", "DEU", "GRC", "HUN", "IRL", "ITA", "LUX", "MLT", "NLD", "PRT", "ROU", "SVK", "SVN", "ESP", "RUS", "GRL", "MEX", "USA", "EGY", "CYP", "TUR", "CHN", "JPN", "IND", "UKR", "BRA", "CHL", "ARE", "GBR"}
+            Dim WorldCountryAbbrev() As String = {"LVA", "LTU", "POL", "NOR", "FIN", "SWE", "AUT", "BEL", "BGR", "HRV", "CYP", "CZE", "DNK", "FRA", "DEU", "GRC", "HUN", "IRL", "ITA", "LUX", "MLT", "NLD", "PRT", "ROU", "SVK", "SVN", "ESP", "RUS", "GRL", "MEX", "USA", "EGY", "CYP", "TUR", "CHN", "JPN", "IND", "UKR", "BRA", "CHL", "ARE", "GBR"}
 
             For i As Integer = 0 To 41
                 If WorldCountry(i) = cbMaakond.SelectedItem Then
@@ -107,6 +107,29 @@ Cyprus", "Czechia", "Denmark", "France", "Germany", "Greece", "Hungary", "Irelan
         reader = New StreamReader(response.GetResponseStream())
         jsonStringWorld = reader.ReadToEnd()
 
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Dim MyTime
+        MyTime = TimeSerial(13, 42, 0) 'Время дня в которое хотим обновлять данные
+        lblTime.Text = TimeOfDay ' Показывает текущее время в приложении
+        If MyTime = TimeOfDay Then
+            lblDatee.Text = "Data is updated"
+            request = DirectCast(WebRequest.Create("https://opendata.digilugu.ee/opendata_covid19_tests_total.json"), HttpWebRequest)
+            response = DirectCast(request.GetResponse(), HttpWebResponse)
+            reader = New StreamReader(response.GetResponseStream())
+            jsonString = reader.ReadToEnd()
+
+            request = DirectCast(WebRequest.Create("https://opendata.digilugu.ee/opendata_covid19_test_county_all.json"), HttpWebRequest)
+            response = DirectCast(request.GetResponse(), HttpWebResponse)
+            reader = New StreamReader(response.GetResponseStream())
+            jsonStringMaakond = reader.ReadToEnd()
+
+            request = DirectCast(WebRequest.Create("https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/latest/owid-covid-latest.json"), HttpWebRequest)
+            response = DirectCast(request.GetResponse(), HttpWebResponse)
+            reader = New StreamReader(response.GetResponseStream())
+            jsonStringWorld = reader.ReadToEnd()
+        End If
     End Sub
 End Class
 
