@@ -161,7 +161,7 @@ Partial Class CoronaApp
         '
         Me.cbMaakond.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbMaakond.FormattingEnabled = True
-        Me.cbMaakond.Items.AddRange(New Object() {"Eesti", "Harju maakond", "Hiiu maakond", "Ida-Viru maakond", "Järva maakond", "Jõgeva maakond", "Lääne maakond", "Lääne-Viru maakond", "Pärnu maakond", "Põlva maakond", "Rapla maakond", "Saare maakond", "Tartu maakond", "Valga maakond", "Viljandi maakond", "Võru maakond", "Finland", "Latvia", "Lithuania", "Norway", "Poland", "Sweden", "Austria", "Belgium", "Croatia", "Cyprus", "Czechia", "Denmark", "France", "Germany", "Greece", "Hungary", "Ireland", "Italy", "Luxembourg", "Malta", "Netherlands", "Portugal", "Romania", "Slovakia", "Slovenia", "Spain"})
+        Me.cbMaakond.Items.AddRange(New Object() {"Eesti", "Harju maakond", "Hiiu maakond", "Ida-Viru maakond", "Järva maakond", "Jõgeva maakond", "Lääne maakond", "Lääne-Viru maakond", "Pärnu maakond", "Põlva maakond", "Rapla maakond", "Saare maakond", "Tartu maakond", "Valga maakond", "Viljandi maakond", "Võru maakond", "Finland", "Latvia", "Lithuania", "Norway", "Poland", "Sweden", "Austria", "Belgium", "Croatia", "Cyprus", "Czechia", "Denmark", "France", "Germany", "Greece", "Hungary", "Ireland", "Italy", "Luxembourg", "Malta", "Netherlands", "Portugal", "Romania", "Slovakia", "Slovenia", "Spain", "Russia", "Greenland", "Mexico", "United States", "Egypt", "Cyprus", "Turkey", "China", "Japan", "India", "Ukraine", "Brazil", "Chile", "United Arab Emirates", "United Kingdom"})
         Me.cbMaakond.Location = New System.Drawing.Point(145, 269)
         Me.cbMaakond.Name = "cbMaakond"
         Me.cbMaakond.Size = New System.Drawing.Size(121, 21)
