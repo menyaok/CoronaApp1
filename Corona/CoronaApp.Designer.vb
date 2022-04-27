@@ -22,6 +22,7 @@ Partial Class CoronaApp
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.btnData = New System.Windows.Forms.Button()
         Me.txtOutputTotal = New System.Windows.Forms.Label()
         Me.txtData = New System.Windows.Forms.TextBox()
@@ -39,6 +40,11 @@ Partial Class CoronaApp
         Me.lblMaakond = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtOutputNext = New System.Windows.Forms.Label()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.lblDate = New System.Windows.Forms.Label()
+        Me.lblTime = New System.Windows.Forms.Label()
+        Me.lblDatee = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btnData
@@ -194,11 +200,55 @@ Partial Class CoronaApp
         Me.txtOutputNext.TabIndex = 17
         Me.txtOutputNext.Text = "0"
         '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        Me.Timer1.Interval = 50
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(278, 368)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(97, 13)
+        Me.Label8.TabIndex = 18
+        Me.Label8.Text = "Data was updated:"
+        '
+        'lblDate
+        '
+        Me.lblDate.AutoSize = True
+        Me.lblDate.Location = New System.Drawing.Point(382, 368)
+        Me.lblDate.Name = "lblDate"
+        Me.lblDate.Size = New System.Drawing.Size(0, 13)
+        Me.lblDate.TabIndex = 19
+        '
+        'lblTime
+        '
+        Me.lblTime.AutoSize = True
+        Me.lblTime.Location = New System.Drawing.Point(486, 368)
+        Me.lblTime.Name = "lblTime"
+        Me.lblTime.Size = New System.Drawing.Size(30, 13)
+        Me.lblTime.TabIndex = 20
+        Me.lblTime.Text = "Time"
+        '
+        'lblDatee
+        '
+        Me.lblDatee.AutoSize = True
+        Me.lblDatee.Location = New System.Drawing.Point(393, 368)
+        Me.lblDatee.Name = "lblDatee"
+        Me.lblDatee.Size = New System.Drawing.Size(30, 13)
+        Me.lblDatee.TabIndex = 21
+        Me.lblDatee.Text = "Date"
+        '
         'CoronaApp
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.lblDatee)
+        Me.Controls.Add(Me.lblTime)
+        Me.Controls.Add(Me.lblDate)
+        Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.txtOutputNext)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.lblMaakond)
@@ -240,4 +290,9 @@ Partial Class CoronaApp
     Friend WithEvents lblMaakond As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents txtOutputNext As Label
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents Label8 As Label
+    Friend WithEvents lblDate As Label
+    Friend WithEvents lblTime As Label
+    Friend WithEvents lblDatee As Label
 End Class
